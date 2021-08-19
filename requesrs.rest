@@ -1,0 +1,14 @@
+ ### get 
+ GET  http://localhost:3003/api/blogs
+
+   ### post 
+
+ POST  http://localhost:3003/api/blogs
+       Content-Type: application/json
+
+       {
+           "title":"mujib is the boss",
+           "author":"Abdulmujib",
+           "url":"mujib.com",
+           "likes":50
+       }
