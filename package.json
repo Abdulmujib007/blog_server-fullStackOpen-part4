@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Abdulmujib007/blog_server-fullStackOpen-part4.gi#readme",
   "devDependencies": {
+    "jest": "^27.0.6",
     "nodemon": "^2.0.12"
   },
   "dependencies": {
