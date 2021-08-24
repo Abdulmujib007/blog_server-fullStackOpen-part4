@@ -2,12 +2,10 @@
  const Blog  = require('../models/blog')
 
 
- blogRouter.get('/', (request, response) => {
-    Blog
-      .find({})
-      .then(blogs => {
-        response.json(blogs)
-      })
+ blogRouter.get('/', async(request, response) => {
+  const allBlogs = await Blog.find({})
+   response.send(allBlogs)
+     
   })
   
   blogRouter.post('/', (request, response) => {

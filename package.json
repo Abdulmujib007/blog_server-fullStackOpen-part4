@@ -4,9 +4,9 @@
   "description": "blog server",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest --verbose"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test jest --verbose --runInBand"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,16 @@
   },
   "homepage": "https://github.com/Abdulmujib007/blog_server-fullStackOpen-part4.gi#readme",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^27.0.6",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "mongoose": "^5.13.7"
   },
   "jest": {
