@@ -1,6 +1,6 @@
  const Blog = require('../models/blog')
 
-const dummy = (blogs) => {
+const dummy = () => {
      return 1
   }
   

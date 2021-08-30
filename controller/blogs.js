@@ -22,7 +22,6 @@
   })
   
   blogRouter.post('/', async (request, response) => {
-    // const body = !request.body.likes ? {...request.body,likes:0} : request.body
     if(!request.body.url || !request.body.title) return response.status(400).end()
   
 

@@ -1,6 +1,6 @@
  ### 
  
- GET  http://localhost:3003/api/blog
+#  GET  http://localhost:3003/api/blog
 
 
     ### 
@@ -8,20 +8,13 @@
 
    ### post
 
-#  POST  http://localhost:3003/api/blog
+# post http://localhost:3003/api/user
 #        Content-Type: application/json
 
 #        {
-#            "title":"mujib is the boss",
-#            "author":"Abdulmujib",
-#            "likes":50
-#        }
- put http://localhost:3003/api/blog/611f89dce8f48f5607c4570b
-       Content-Type: application/json
-
-       {
-         "title":"who be this one wey dy breathe",
-         "author":"akorede number 1",
-         "likes": 50,
-         "url":"firstwinnersclub.com"
-       }
+#           "username":"harbdulmujib",
+#           "password":"asiyanb",
+#           "name":"mujib"
+#         }
+  
+  get http://localhost:3003/api/user
