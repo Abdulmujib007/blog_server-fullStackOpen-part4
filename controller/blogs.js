@@ -1,5 +1,10 @@
  const blogRouter = require('express').Router()
  const Blog  = require('../models/blog')
+ const User = require('../models/user')
+ const jwt = require('jsonwebtoken')
+ require('dotenv').config()
+
+  
 
 
  blogRouter.put('/:id', async (req,res) => {
@@ -16,20 +21,38 @@
 
 
  blogRouter.get('/', async(request, response) => {
-  const allBlogs = await Blog.find({})
+  const allBlogs = await Blog.find({}).populate('user')
    response.send(allBlogs)
      
   })
   
   blogRouter.post('/', async (request, response) => {
-    if(!request.body.url || !request.body.title) return response.status(400).end()
+  const body = request.body
+
+  if(!body.url || !body.title) return response.status(400).end()
+  if(!body.likes) body.likes = 0
+
+  const decodedToken = jwt.verify(request.token,process.env.SECRET)
+
+  if(!decodedToken.id) {
+    return res.status(401).send({error:"token missing or invalid"})
+    
+  }
   
-
-    if(!request.body.likes) request.body.likes = 0
-
-    const blog = new Blog(request.body)
+    const user = await User.findById(decodedToken.id)
+    console.log(user)
+    const blog = new Blog({
+      title:body.title,
+      author:body.author,
+      url:body.url,
+      likes:body.likes,
+      user:user._id
+    })
   
     const result = await blog.save()
+    // console.log(result)
+    user.blogs = user.blogs.concat(result._id)
+    await user.save()
       return response.status(201).json(result)
   })
 
