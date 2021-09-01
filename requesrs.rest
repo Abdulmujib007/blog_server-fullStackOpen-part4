@@ -15,11 +15,20 @@ post  http://localhost:3003/api/blog
        Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhcmJkdWxtdWppYiIsImlkIjoiNjEyY2M0M2FjMjliN2Y0MzMyMmVkNGIzIiwiaWF0IjoxNjMwMzU1MDY4fQ.y5opj8MB5URuQImHiOQ6RyzqSR0iB-MhztJjwLZ21cU
 
        {
-          "title":"who let the dogs out",
           "author":"mj007",
           "url":"htttp://mujib.com"
 
         }
+###
+post  http://localhost:3003/api/user
+  Content-Type: application/json
+
+  {
+    "username":"harbdulmujib",
+    "password":"abdulife",
+    "name":"mj007"
+  }
+
 
 ###
   post  http://localhost:3003/api/login
@@ -36,7 +45,10 @@ post  http://localhost:3003/api/blog
   delete http://localhost:3003/api/user/612cbeeb332cdd3c015062f
 
 ### 
- delete http://localhost:3003/api/blog/611ebde02df3f82c9a096d15
+ delete http://localhost:3003/api/blog/612cf129bdcfd89082247c35
+ Content-Type: application/json
+ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhcmJkdWxtdWppYiIsImlkIjoiNjEyY2M0M2FjMjliN2Y0MzMyMmVkNGIzIiwiaWF0IjoxNjMwNDA3MjI1fQ.SBhXdMD3bze418HmN6ndgEDI4J1YBIY5Xjyzdoo1wzI
+
 
 
 

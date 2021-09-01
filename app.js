@@ -22,7 +22,7 @@ app.use(express.json())
 
 
 app.use('/api/blog',middleware.tokenExtractor,blogRouter)
-app.use('/api/user',middleware.errorHandler,userRouter)
+app.use('/api/user',userRouter,middleware.errorHandler)
 app.use('/api/login',loginRouter)
 
 module.exports = app
